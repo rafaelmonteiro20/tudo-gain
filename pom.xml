@@ -38,10 +38,11 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.flywaydb</groupId> -->
-<!-- 			<artifactId>flyway-core</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>7.15.0</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
 
 		<!-- Utilitários -->
 		<dependency>
