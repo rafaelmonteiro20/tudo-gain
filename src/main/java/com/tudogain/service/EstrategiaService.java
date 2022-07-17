@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.tudogain.exception.ResourceNotFoundException;
 import com.tudogain.model.Estrategia;
 import com.tudogain.repository.EstrategiaRepository;
 
@@ -17,6 +18,11 @@ public class EstrategiaService {
 
     public Page<Estrategia> pesquisar(Pageable pageable) {
         return estrategiaRepository.findAll(pageable);
+    }
+
+    public Estrategia buscarPorId(Long id) {
+        return estrategiaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Estratégia não encontrada."));
     }
 
 }
