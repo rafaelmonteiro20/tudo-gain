@@ -3,6 +3,7 @@ package com.tudogain.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tudogain.exception.ResourceNotFoundException;
 import com.tudogain.model.Estrategia;
@@ -23,6 +24,11 @@ public class EstrategiaService {
     public Estrategia buscarPorId(Long id) {
         return estrategiaRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Estratégia não encontrada."));
+    }
+
+    @Transactional
+    public Estrategia salvar(Estrategia estrategia) {
+        return estrategiaRepository.save(estrategia);
     }
 
 }
