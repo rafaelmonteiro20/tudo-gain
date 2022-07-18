@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotBlank;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Estrategia implements Identifiable<Long> {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_ESTRATEGIA)
     private Long id;
 
+    @NotBlank
     private String descricao;
 
 }

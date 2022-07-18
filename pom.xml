@@ -44,6 +44,12 @@
 			<version>7.15.0</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 
+		<!-- Validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
 		<!-- Utilitários -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

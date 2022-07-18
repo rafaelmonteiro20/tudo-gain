@@ -1,5 +1,7 @@
 package com.tudogain.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -35,7 +37,7 @@ public class EstrategiaController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> save(@RequestBody Estrategia estrategia) {
+    public ResponseEntity<Object> save(@Valid @RequestBody Estrategia estrategia) {
         estrategia = estrategiaService.salvar(estrategia);
         return ResponseEntity.created(RequestUtils.location(estrategia)).build();
     }
